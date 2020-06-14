@@ -260,7 +260,7 @@ KEYMAPS(
 
    LCTRL(Key_Spacebar),  Key_6, Key_7, Key_8, Key_9, Key_0,         M(MACRO_CTRL_ALT),
    Key_Enter,     Key_J, Key_L, Key_U,     Key_Y,         Key_Semicolon, Key_Equals,
-                  Key_H, Key_N, Key_E,     Key_I,         Key_O,         Key_Quote,//MT(LeftGui, Quote),
+                  Key_H, Key_N, Key_E,     Key_I,         Key_O,         MT(LeftGui, Quote),
    M(MACRO_CTRL_SFT),  Key_K, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
    OSM(RightShift), OSM(LeftAlt), Key_Spacebar, OSM(RightControl),
    ShiftToLayer(FUNCTION)),
@@ -483,7 +483,7 @@ KALEIDOSCOPE_INIT_PLUGINS(
   //FocusEEPROMCommand,
 
   // Advanced dual use keys
-  //Qukeys,
+  Qukeys,
 
   // The boot greeting effect pulses the LED button for 10 seconds after the
   // keyboard is first connected
@@ -495,7 +495,7 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // Sticky keys
   OneShot,
-  //EscapeOneShot,
+  EscapeOneShot,
 
   // The macros plugin adds support for macros
   Macros,
@@ -508,35 +508,35 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // The rainbow effect changes the color of all of the keyboard's keys at the same time
   // running through all the colors of the rainbow.
-//  LEDRainbowEffect,
+   LEDRainbowEffect,
 
   // The rainbow wave effect lights up your keyboard with all the colors of a rainbow
   // and slowly moves the rainbow across your keyboard
-//  LEDRainbowWaveEffect,
+  LEDRainbowWaveEffect,
 
   // The chase effect follows the adventure of a blue pixel which chases a red pixel across
   // your keyboard. Spoiler: the blue pixel never catches the red pixel
-//  LEDChaseEffect,
+  LEDChaseEffect,
 
   // These static effects turn your keyboard's LEDs a variety of colors
-//  solidRed, solidOrange, solidYellow, solidGreen, solidBlue, solidIndigo, solidViolet,
+  solidRed, solidOrange, solidYellow, solidGreen, solidBlue, solidIndigo, solidViolet,
 
   // The breathe effect slowly pulses all of the LEDs on your keyboard
-//  LEDBreatheEffect,
+  LEDBreatheEffect,
 
   // The AlphaSquare effect prints each character you type, using your
   // keyboard's LEDs as a display
-//  AlphaSquareEffect,
+  AlphaSquareEffect,
 
   // The stalker effect lights up the keys you've pressed recently
-//  StalkerEffect,
+  StalkerEffect,
 
   // The LED Palette Theme plugin provides a shared palette for other plugins,
   // like Colormap below
-//  LEDPaletteTheme,
+  LEDPaletteTheme,
 
   // The Colormap effect makes it possible to set up per-layer colormaps
-//  ColormapEffect,
+  ColormapEffect,
 
   // The numpad plugin is responsible for lighting up the 'numpad' mode
   // with a custom LED effect
@@ -556,7 +556,7 @@ KALEIDOSCOPE_INIT_PLUGINS(
   //MagicCombo,
 
   // Topsy
-  //TopsyTurvy,
+  TopsyTurvy,
 
 
 
@@ -580,23 +580,21 @@ void setup() {
   Kaleidoscope.setup();
 
   // Advanced dual keys
-  /*
   QUKEYS(
     kaleidoscope::plugin::Qukey(0, KeyAddr(0, 6), LALT(Key_LeftShift)), // Led => Alt + Shift
     kaleidoscope::plugin::Qukey(0, KeyAddr(0, 9), LALT(Key_LeftShift)), // Any => Alt + Shift
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 6), LCTRL(Key_LeftShift)), // Esc => Ctr + Shift
     kaleidoscope::plugin::Qukey(1, KeyAddr(0, 6), LALT(Key_LeftShift)), // Led => Alt + Shift
     kaleidoscope::plugin::Qukey(1, KeyAddr(0, 9), LALT(Key_LeftShift)), // Any => Alt + Shift
-    kaleidoscope::plugin::Qukey(1, KeyAddr(2, 6), LCTRL(Key_LeftShift)) // Esc => Ctr + Shift
+    kaleidoscope::plugin::Qukey(1, KeyAddr(2, 6), LCTRL(Key_LeftAlt)) // Esc => Ctr + Shift
   )
-  */
 
   // While we hope to improve this in the future, the NumPad plugin
   // needs to be explicitly told which keymap layer is your numpad layer
   NumPad.numPadLayer = NUMPAD;
 
   // We configure the AlphaSquare effect to use RED letters
-  //AlphaSquare.color = CRGB(255, 0, 0);
+  AlphaSquare.color = CRGB(255, 0, 0);
 
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
   // This draws more than 500mA, but looks much nicer than a dimmer effect
