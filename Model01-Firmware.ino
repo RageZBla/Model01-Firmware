@@ -189,6 +189,19 @@ enum { PRIMARY, NUMPAD, FUNCTION }; // layers
 // #define PRIMARY_KEYMAP_DVORAK
 #define PRIMARY_KEYMAP_CUSTOM
 
+#define Key_AT    LSHIFT(Key_2)
+#define Key_STAR  LSHIFT(Key_8)
+#define Key_DOLLR LSHIFT(Key_4)
+#define Key_CARET LSHIFT(Key_6)
+#define Key_PRCNT LSHIFT(Key_5)
+#define Key_EXCLM LSHIFT(Key_1)
+#define Key_HASH  LSHIFT(Key_3)
+#define Key_AND   LSHIFT(Key_7)
+#define Key_LP   LSHIFT(Key_9)
+#define Key_RP   LSHIFT(Key_0)
+#define Key_LCB   LSHIFT(Key_LeftBracket)
+#define Key_RCB   LSHIFT(Key_RightBracket)
+#define Key_UNDSCR   LSHIFT(Key_Minus)
 
 
 /* This comment temporarily turns off astyle's indent enforcement
@@ -286,11 +299,12 @@ KEYMAPS(
    ___, ___, ___, ___,
    ___),
 
+
   [FUNCTION] =  KEYMAP_STACKED
   (Key_LEDEffectNext,      Key_F1,           Key_F2,      Key_F3,     Key_F4,        Key_F5,           ___,
-   Key_Tab,  TOPSY(1), TOPSY(2), Key_LeftCurlyBracket,     Key_RightCurlyBracket,  Key_Pipe, Key_mouseWarpNE,
-   Key_Home, TOPSY(3), TOPSY(4), Key_KeypadLeftParen, Key_KeypadRightParen, Key_Backslash,
-   Key_End,  TOPSY(5),  TOPSY(6),  Key_LeftBracket,        Key_RightBracket, TOPSY(Minus),  Key_mouseWarpSE,
+   Key_Tab,  Key_EXCLM, Key_AT, Key_LeftCurlyBracket,     Key_RightCurlyBracket,  Key_Pipe, Key_mouseWarpNE,
+   Key_Home, Key_HASH, Key_DOLLR, Key_LP, Key_RP, Key_Backslash,
+   Key_End,  Key_PRCNT, Key_CARET,  Key_LeftBracket,        Key_RightBracket, TOPSY(Minus),  Key_mouseWarpSE,
    ___, Key_Delete, ___, ___,
    ___,
 
